@@ -91,12 +91,41 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+//declared function calculateTip
+//two parameters decimalTip, totalBill
+//return decimalTip * totalBill
+
+function calculateTip(decimalTip, totalBill){
+
+    return decimalTip * totalBill;
+}
+
+console.log(calculateTip(.20, 20));
+console.log(calculateTip(.25, 25.50));
+console.log(calculateTip(.15, 33.42));
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+// let tipPercent = Number(prompt("What percent would you like to tip?")); //10 or .10
+//
+// let tipDeci = tipPercent / 100;
+//
+// let billTotal = Number(prompt("How much was your bill today?"))
+
+// alert(`$${calculateTip(tipDeci, billTotal).toFixed(2)} is your tip amount for today, thank you for using your application`);
+
+// let totalTip = calculateTip(tipDeci, billTotal);
+
+// let alertMessage = "Your tip is $" + totalTip.toFixed(2);
+
+// alert(alertMessage);
+
+// alert("Your tip is $" + totalTip.toFixed(2));
 
 /**
  * TODO:
@@ -112,3 +141,16 @@ console.log(isTwo(random));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+let discountPercentRandom = Math.random().toFixed(2);
+
+function applyDiscount(originalPrice, discountPercent){
+
+    return originalPrice - (originalPrice * discountPercent);
+}
+
+console.log(`${discountPercentRandom} is the decimal we're passing into the applydiscount function`);
+console.log(applyDiscount(100, discountPercentRandom));
+console.log(applyDiscount(100, .20));
+
+console.log(applyDiscount(45.99, 0.12));
