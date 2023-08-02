@@ -48,7 +48,7 @@ console.log(helloMessage);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+let random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -68,6 +68,17 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
+//declared function - isTwo
+//one parameter - number is param name
+//RETURN if number === 2
+
+function isTwo(number){
+
+    return number === 2;
+}
+
+console.log("The random number is " + random);
+console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
