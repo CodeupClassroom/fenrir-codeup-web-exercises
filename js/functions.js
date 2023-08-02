@@ -29,6 +29,10 @@ function sayHello(name){
  * console.log 'helloMessage' to check your work
  */
 
+let helloMessage = sayHello("Kenneth");
+
+console.log(helloMessage);
+
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
