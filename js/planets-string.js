@@ -32,16 +32,16 @@
     console.log(planetsHTML);
 
 
-    // let planetListHTML = "<ul>";
-    //
-    //
-    // for (let i = 0; i < planetsArray.length; i++) {
-    //     planetListHTML += `<li>${planetsArray[i]}</li>`;
-    // }
-    //
-    // planetListHTML += "</ul>";
-    //
-    // console.log(planetListHTML);
+    let planetListHTML = "<ul>";
+
+
+    for (let i = 0; i < planetsArray.length; i++) {
+        planetListHTML += `<li>${planetsArray[i]}</li>`;
+    }
+
+    planetListHTML += "</ul>";
+
+    console.log(planetListHTML);
 
 
 let bonusRoundTwo = planetsArray.join("</li><li>")
