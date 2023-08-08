@@ -44,6 +44,9 @@
     // console.log(planetListHTML);
 
 
+let bonusRoundTwo = planetsArray.join("</li><li>")
 
+    bonusRoundTwo = "<ul><li>" + bonusRoundTwo + "</li></ul>";
+    console.log(bonusRoundTwo);
 
 })();
