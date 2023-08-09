@@ -144,5 +144,3 @@ mySecondCar.informationLog = function(){
 for(let car of myGarage){
     car.informationLog();
 }
-
-
