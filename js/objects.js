@@ -180,6 +180,16 @@
      *      ...
      */
 
+for (let i = 0; i < books.length; i++) {
+    console.log(`Books # ${i + 1}`);
+    console.log(`Title: ${books[i].title}`);
+    console.log(`Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
+}
+
+    //.forEach . . we could have used new line character '\n'
+    //Put message into variable and call variable with string?
+    //Again: many roads to Rome as long you got to Rome. . .
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
