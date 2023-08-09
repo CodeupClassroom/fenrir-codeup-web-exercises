@@ -99,7 +99,63 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    /**
+    //Way numero uno - book objects then dec / init Array with book obj vars
+
+    let book1 = {
+        title: "Fahrenheit 451",
+        author:{
+            firstName: "Ray",
+            lastName: "Bradbury"
+        }
+    }
+
+    let book2 = {
+        title: "Cat's Cradle",
+        author: {
+            firstName: "Kurt",
+            lastName: "Vonnegut"
+        }
+
+    }
+    let book3 = {
+        title: "Nine Stories",
+        author: {
+            firstName: "J.D.",
+            lastName: "Salinger"
+        }
+
+    }
+    let book4 = {
+        title: "Foundation",
+        author: {
+            firstName: "Isaac",
+            lastName: "Asimov"
+        }
+
+    }
+    let book5 = {
+        title: "Test Driven Development by Example",
+        author: {
+            firstName: "Kent",
+            lastName: "Beck"
+        }
+
+    }
+
+    let books = [book1, book2, book3, book4, book5];
+
+    //Books.push(book1)
+    //books.push({title: , author: {firstName: , lastName: }})
+
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName + " " + books[0].author.lastName);
+
+    console.log(books[3].title);
+    console.log(books[3].author.firstName + " " + books[3].author.lastName);
+
+
+/**
      * TODO:
      * Loop through the books array and output the following information about
      * each book:
