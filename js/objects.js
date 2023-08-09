@@ -1,4 +1,4 @@
-// (function() {
+(function() {
     "use strict";
 
     /**
@@ -201,4 +201,44 @@ for (let i = 0; i < books.length; i++) {
      *   `showBookInfo` function.
      */
 
-// })();
+    //We could have params like: bookTitle, authorName and split authorName
+    //We could have accepted a "author object" but. . that seems more remote?
+
+    function createBook(bookTitle, authorFirstName, authorLastName){
+        //We got fancy :( :) definitely can make this multiple lines using variables not saying this is 'best way', but it is working
+        // return {title: bookTitle, author: {firstName: authorFirstName, lastName: authorLastName}};
+
+        //This is great: Readable, functional, and also great code
+        let bookObject = {};
+        bookObject.title = bookTitle;
+        bookObject.author = {
+            firstName: authorFirstName,
+            lastName: authorLastName
+        };
+
+        return bookObject;
+    }
+
+    let booksArray = [];
+
+    booksArray.push(createBook("Title1", "Dude", "McDude"));
+    booksArray.push(createBook("Title2", "Dude", "McDude"));
+    booksArray.push(createBook("Title3", "Dude", "McDude"));
+    booksArray.push(createBook("Title4", "Dude", "McDude"));
+    booksArray.push(createBook("Title5", "Dude", "McDude"));
+
+
+    //We wrote purrrrrfectly good code above that shows book info - why re-write it when we can refactor and D R Y?
+
+function showBookInfo(array){
+
+    for (let i = 0; i < array.length; i++) {
+        console.log(`Books # ${i + 1}`);
+        console.log(`Title: ${array[i].title}`);
+        console.log(`Author: ${array[i].author.firstName} ${array[i].author.lastName}`);
+    }
+}
+
+showBookInfo(booksArray);
+
+})();
