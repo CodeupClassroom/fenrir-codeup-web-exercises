@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+</head>
+<body>
+    <form method="get" action="https://request-inspector.glitch.me/">
+        <label>Username:
+            <input type="search" name="username" placeholder="Username">
+        </label>
+        <br>
+        <label>Password:
+            <input type="password" name="password" placeholder="Please type in your password">
+        </label>
+        <br>
+        <label>Comments
+            <textarea maxlength="500" name="comment" placeholder="Comments go here..."></textarea>
+        </label>
+        <h2>Which of these sci-fi shows have you watched?</h2>
+        <label>
+            <input type="checkbox" name="scifi-show" value="star_trek"> Star Trek
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="scifi-show" value="stargate">Stargate SG-1
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="scifi-show" value="red_dwarf">Red Dwarf
+        </label>
+        <br>
+        <h2>Quiz question 1</h2>
+        <label>A
+            <input type="radio" name="quiz-question-1" value="a">
+        </label>
+        <br>
+        <label>B
+            <input type="radio" name="quiz-question-1" value="b">
+        </label>
+        <br>
+        <label>C
+            <input type="radio" name="quiz-question-1" value="c">
+        </label>
+        <br>
+        <label>D
+            <input type="radio" name="quiz-question-1" value="d">
+        </label>
+        <br>
+        <h2>Choose a coffee</h2>
+        <label>
+            <select name="coffee-preference">
+                <option value="" disabled>Please choose a roast!</option>
+                <option
+                        value="light"
+
+                >Light Roast</option>
+                <option value="dark">Dark Roast</option>
+                <option value="espresso" >Espresso</option>
+            </select>
+        </label>
+        <br>
+
+        <input type="hidden" name="user_id" value="456">
+
+        <!--        <input type="submit">-->
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>
