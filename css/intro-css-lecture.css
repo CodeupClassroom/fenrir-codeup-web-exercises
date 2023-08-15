@@ -5,8 +5,11 @@ h1 {
 }
 
 .purple {
+  /* targeting an element by class name */
   color: purple;
 }
 
 .fancy-header.purple {
+  /* targeting an element with multiple class names (combo class) */
+  color: magenta;
 }
