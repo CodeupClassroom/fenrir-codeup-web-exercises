@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<form method="GET" action="https://request-inspector.glitch.me/">
+<!--  Text fields for email and password-->
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" placeholder="email">
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" placeholder="password">
+<!--  Bio-->
+  <label for="bio">Bio:</label>
+  <textarea id="bio" name="bio"></textarea>
+<!--  How did you hear about us? - Radio buttons-->
+  <h2>How did you hear about us?</h2>
+  <label for="billboard">Billboard
+    <input type="radio" id="billboard" name="how-did-you-hear" value="billboard">
+  </label>
+  <br>
+  <label for="radio_advertisement">Radio Advertisement
+    <input type="radio" id="radio_advertisement" name="how-did-you-hear" value="radio_advertisement">
+  </label>
+  <br>
+  <label for="internet_advertisement">Internet Advertisement
+    <input type="radio" id="internet_advertisement" name="how-did-you-hear" value="internet_advertisement">
+  </label>
+  <br>
+  <label for="other">Other
+    <input type="radio" id="other" name="how-did-you-hear" value="other">
+  </label>
+  <br>
+<!--  How did you hear about us? - Checkboxes-->
+  <h2>How did you hear about us?</h2>
+  <label for="billboard_box">Billboard
+    <input type="checkbox" id="billboard_box" name="how-did-you-hear-box" value="billboard">
+  </label>
+  <br>
+  <label for="radio_advertisement_box">Radio Advertisement
+    <input type="checkbox" id="radio_advertisement_box" name="how-did-you-hear-box" value="radio_advertisement">
+  </label>
+  <br>
+  <label for="internet_advertisement">Internet Advertisement
+    <input type="checkbox" id="how-did-you-hear-box" name="options_box" value="internet_advertisement">
+  </label>
+  <br>
+  <label for="other_box">Other
+    <input type="checkbox" id="other_box" name="how-did-you-hear-box" value="other">
+  </label>
+  <br>
+  <br>
+<!--  What browser do you use?-->
+  <label for="browsers">What web browser do you use?
+    <select id="browsers" name="browsers">
+      <option value="safari">Safari</option>
+      <option value="chrome">Google Chrome</option>
+      <option value="firefox">Mozilla Firefox</option>
+    </select>
+  </label>
+  <br>
+  <br>
+  <button type="submit" id="submit">Submit</button>
+</form>
+</body>
+</html>
