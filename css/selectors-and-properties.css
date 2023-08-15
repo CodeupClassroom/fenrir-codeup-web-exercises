@@ -1,0 +1,67 @@
+:root {
+    --main-red: #ff0000;
+    --picture: url("https://media.licdn.com/dms/image/C4E03AQEI7jPFjT7iKQ/profile-displayphoto-shrink_200_200/0/1576859165131?e=1697673600&v=beta&t=TB8FFSxb8zxDwgkcaE08aHZyZoNXGs3xesDm_nbWJ70");
+}
+
+/* selector {
+    property: value;
+    property: value;
+}*/
+
+/* Watch me add a color property and padding to our footer */
+
+footer {
+    color: var(--main-red);
+    padding: 2em;
+}
+
+/* You do:
+
+TODO: Add a selector to change the background color of the footer element to black and a text-align property of center*/
+
+footer {
+    background-color: black;
+    text-align: center;
+}
+
+/*
+ Watch me add a fancy-header and a pair of fonts to my page - one serif (headings and the like); one sans (paragraphs for example)
+ */
+
+.fancy-header {
+       font-style: italic;
+}
+
+.serif-font {
+        font-family: 'Crimson Text', serif;
+}
+
+p {
+         font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+/*
+    You do:
+    TODO: Select the class of no-decoration and add a property that would remove that list item's bullet.
+
+    TODO:
+
+ */
+
+
+/* Worksheet Bonuses:
+
+
+    TODO: Look up your own font like I did on Google Fonts - replace the link elements on lines 8-9-10 with your own.
+
+    TODO: Use the "CSS rules. . ." code snippet with your selector to test your new font
+
+    examples:
+    selector1 {
+        font-family: 'Some No-Serif Font', sans-serif;
+    }
+
+    selector2 {
+        font-family: 'Some Serif Font', serif;
+    }
+*/
