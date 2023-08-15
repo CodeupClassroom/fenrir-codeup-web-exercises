@@ -1,0 +1,12 @@
+/* THIS IS A COMMENT IN CSS */
+h1 {
+  color: blue;
+  padding: 30px;
+}
+
+.purple {
+  color: purple;
+}
+
+.fancy-header.purple {
+}
