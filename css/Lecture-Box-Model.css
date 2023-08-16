@@ -1,0 +1,118 @@
+
+/*CSS RESET*/
+/*
+    - Browsers come with their own default styles for HTML elements, That's where the inconsistency creeps in
+    -  magic of CSS resets comes in. They serve as a baseline for styling consistency.
+*/
+@import "resetCSS.css";
+
+/*
+Box Model
+    -Introduction
+    - Height & Width
+    - Padding
+    - Border
+    - Margin
+    - DIV and SPAN
+    - Overall Size
+    - CSS Reset
+ */
+
+h1 {
+    /*----- No Meaning, Just visual -----*/
+    background-color: royalblue;
+
+    /* Height & Width */
+    height: fit-content;
+    width: fit-content;
+
+    /*----- Padding -----*/
+    /*Think of padding as the breathing space between your content and the element's borders.*/
+
+    /*- Padding all sides -*/
+    /*padding: 50px;*/
+
+    /*- Top, Right, Bottom, Left -*/
+    /*padding: 10px 20px 50px 100px;*/
+
+    /*- Padding Left, Right, Top, Bottom -*/
+    /*padding-left: 10px;*/
+    /*padding-right: 10px;*/
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+
+    /*- top/bottom left/right -*/
+    padding: 0 40px;
+
+    /*----- Border -----*/
+    /*a frame that encloses your content.*/
+
+    /*- Shorthand -*/
+    border: 5px solid black;
+
+    /*- Long version -*/
+    /*border-color: red;*/
+    /*border-width: 50px;*/
+    /*border-style: dotted;*/
+
+    /*----- Margin -----*/
+    /*This space is outside the element's borders and creates separation from other elements on the page.*/
+    /*- Margin all sides -*/
+    /*margin: 50px;*/
+
+    /*- Top, Right, Bottom, Left -*/
+    /*margin: 10px 20px 50px 100px;*/
+
+    /*- margin Left, Right, Top, Bottom -*/
+    /*margin-left: 10px;*/
+    /*margin-right: 10px;*/
+    /*margin-top: 10px;*/
+    /*margin-bottom: 10px;*/
+
+    /*- top/bottom left/right -*/
+    /*margin: 0 40px;*/
+
+    /*- top/bottom left/right -*/
+    margin: 0 auto;
+
+
+    /*----- Overall Size -----*/
+    /*
+    height = height + padding-top + padding-bottom + border-top + border-bottom
+    width = width + padding-left + padding-right + border-left + border-right
+*/
+
+    /*element{*/
+    /*    height: 100px;*/
+    /*    width: 300px;*/
+    /*    padding: 20px;*/
+    /*    border: 2px solid black;*/
+    /*}*/
+
+    /*width = 344 = 300+20+20+2+2*/
+    /*Height = 144 */
+}
+
+    /*-----DIVS & SPANS -----*/
+    /*DIVS*/
+    /*
+    - It is a container you use when you want to group related elements together
+    - When creating just know it will take the entire width that is available.
+    - There is no inherent meaning, but just more for styling purposes. */
+    div{
+        background-color: red;
+        width: 560px;
+        height: 240px;
+        border: 5px solid #1e1e1e;
+        margin: 0 auto;
+        padding: 20px 50px;
+    }
+    /*SPAN*/
+    /*An example is when you want to color or font size, to a specific word within a sentence.*/
+    .catchTheWord{
+        color:white;
+    }
+
+
+
+
