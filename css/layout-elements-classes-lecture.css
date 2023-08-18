@@ -1,0 +1,12 @@
+@import "resets.css";
+@import "layout.css";
+.row {
+  max-width: 1280px;
+}
+ul {
+  list-style: none;
+}
+
+.container.hero {
+  min-height: 60vh;
+}
