@@ -81,8 +81,17 @@ button.single-submit {
   flex: 0 0 200px;
 }
 
-@media (max-width: 700px) {
-  .row {
+@media screen and (max-width: 900px) {
+  .hero .row {
     flex-direction: column;
+  }
+  .hero .column:has(img.hero-img) {
+    order: -1;
+  }
+}
+
+@media print {
+  .column:has(img.hero-img) {
+    display: none;
   }
 }
