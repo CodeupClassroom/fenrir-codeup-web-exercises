@@ -30,7 +30,7 @@ let myBook2 = {
 
 let myBook3 = {
     bookTitle: "Crossroads Across America",
-    bookAuthor: "Boyz II Men",
+    bookAuthor: "B. Thugs, N. Harmony",
     bookGenre: "Travel"
 }
 
