@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>~ d o m ~</title>
+
+
+</head>
+<body>
+
+    <h1>Header - Big Info!</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span id="interior-span">Ad atque cumque deserunt dolorum enim eos id nesciunt quam quisquam voluptatibus.</span>
+        Doloremque doloribus libero, magnam praesentium temporibus veritatis vero voluptatem voluptates.</p>
+
+    <ol id="ordered-list">
+        <li class="list-item">I'm a list item</li>
+        <li class="list-item">I'm a list item</li>
+        <li class="list-item">I'm a list item</li>
+    </ol>
+
+    <ul>
+        <li data-databaseId="1">List Items Here Too</li>
+        <li data-youNameItWhatYouWant="2">List Items Here Too</li>
+    </ul>
+
+    <form action="" method="get">
+        <input type="text" name="textExample" id="textExample">
+
+        <input type="password" name="passwordExample" id="passwordExample">
+
+        <button type="submit">Submit Button</button>
+    </form>
+
+    <form action="" method="get">
+        <input type="text" name="textExample2" id="textExample2">
+
+        <input type="password" name="passwordExample2" id="passwordExample2">
+
+        <button type="submit">Submit Button</button>
+    </form>
+
+
+
+
+    <script>
+    // Locating some elements
+    //"How do I go to specific part or parts of my DOM tree?)
+        //getElementById() [return one point ('node') that matches the id]
+    console.log(document.getElementById("interior-span"));
+
+    let htmlNode = document.getElementById("interior-span");
+
+    console.log(htmlNode);
+
+    //getElementsByClassName()
+
+    console.log(document.getElementsByClassName("list-item")); //Gives me an "htmlCollection" which is a bundle of nodes
+
+    console.log(document.getElementsByClassName("list-item")[0]);
+
+    console.log("loop below:");
+    for (let i = 0; i < document.getElementsByClassName("list-item").length ; i++) {
+
+        console.log(document.getElementsByClassName("list-item")[i]);
+
+    }
+
+    //getElementsByTagName()
+    //Now we can get all li elements that are spread between both types of list (ordered and unordered)
+    console.log(document.getElementsByTagName("li"));
+
+
+    //When we see the word 'selector' we need to remember "okay - it is time to write it CSS selector style"
+    //querySelector
+    console.log(document.querySelector("#interior-span"));
+
+    //Oops: It will only give me back the FIRST hit of a . . class / tag / etc.
+
+    console.log(document.querySelector("li"));
+    //querySelectorAll()
+    console.log(document.querySelectorAll("li"));
+
+    //We added some forms. . we accessed them with document.forms; we also researched document.anchors which is deprecated :( :(
+
+    //Okay: But, now what? I have. . nodes, I have collections, I have lists but WHY and WHAT can I do with them?
+    //T or F: does . . node have attribute?
+    console.log(document.querySelector("input").hasAttribute("type"));
+    console.log(document.querySelector("input").hasAttribute("src"));
+
+    //What was the VALUE of the attribute
+
+    let firstInput = document.querySelector("input");
+    console.log(document.querySelector("input").getAttribute("type"));
+    console.log(document.querySelector("input").getAttribute("src"));
+
+    firstInput.removeAttribute("type");
+
+    firstInput.setAttribute("type", "password");
+
+    //Kenneth used the world cool again - let's see if it is actually cool tho
+
+    //Class votes it was cool :D
+
+    let myParagraph = document.querySelector("p");
+
+    console.log(myParagraph);
+
+    myParagraph.style.border = "1px solid black";
+    myParagraph.style.color = "cornflowerblue";
+    myParagraph.style.backgroundColor = "rebeccapurple";
+
+    myParagraph.style['background-color'] = "yellow"
+
+    //How can I set multiple things at once very node.style.this node.style.that : look at this Stack Overflow post: https://stackoverflow.com/questions/3968593/how-can-i-set-multiple-css-styles-in-javascript
+
+    myParagraph.style.cssText = `
+    border: 5px solid red;
+    background-color: gray;
+    color: pink;
+    display: flex;
+    `;
+
+    //innerText vs innerHtml
+    //What is the difference?
+    console.log("innerText");
+    console.log(myParagraph.innerText);
+
+    console.log("innerHtml");
+    console.log(myParagraph.innerHTML);
+
+    myParagraph.innerText = "This is going to change the paragraph";
+
+    myParagraph.innerHTML = "This is going to change the paragraph too";
+
+    myParagraph.innerHTML = "<ul><li>This is going to change the paragraph too</li></ul>";
+
+    myParagraph.innerText = "<ul><li>This is going to change the paragraph too</li></ul>";
+    </script>
+</body>
+</html>
