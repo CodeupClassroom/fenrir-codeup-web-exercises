@@ -51,3 +51,36 @@ for (let i = 0; i < myBooks.length; i++) {
 }
 
 container.innerHTML = allCards;
+
+//Adding search feature similar to coffee project
+let searchInput = document.querySelector("#search");
+let searchCards  = "";
+let searchResultBucket = [];
+searchInput.addEventListener("input", (event   ) =>{
+
+    console.log(event.target.value);
+
+
+
+    for (let i = 0; i < myBooks.length; i++) {
+        if(myBooks[i].bookTitle.toLowerCase().includes(event.target.value.toLowerCase())){
+            searchResultBucket.push(myBooks[i]);
+        }
+    }
+
+    for (let i = 0; i < searchResultBucket.length; i++) {
+
+    searchCards +=
+        `<div class="card">
+            <div>Book Title: ${searchResultBucket[i].bookTitle}</div>
+            <div>Book Author: ${searchResultBucket[i].bookAuthor}</div>
+            <div>Book Genre: ${searchResultBucket[i].bookGenre}</div>
+        </div>`
+
+    }
+
+    container.innerHTML = searchCards;
+    searchCards = "";
+    searchResultBucket = [];
+
+})
