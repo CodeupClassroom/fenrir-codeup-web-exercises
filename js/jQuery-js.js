@@ -1,3 +1,3 @@
 $(function(){
-       alert("Document has loaded!")
+       // alert("Document has loaded!")
       });
