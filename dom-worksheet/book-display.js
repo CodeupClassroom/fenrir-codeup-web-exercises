@@ -58,10 +58,6 @@ let searchCards  = "";
 let searchResultBucket = [];
 searchInput.addEventListener("input", (event   ) =>{
 
-    console.log(event.target.value);
-
-
-
     for (let i = 0; i < myBooks.length; i++) {
         if(myBooks[i].bookTitle.toLowerCase().includes(event.target.value.toLowerCase())){
             searchResultBucket.push(myBooks[i]);
