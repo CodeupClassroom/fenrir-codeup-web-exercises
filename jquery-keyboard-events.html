@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyboard events</title>
+</head>
+<body>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script>
+    $(function() {
+        let secretPw = "7210112170101110114105114";
+
+
+        let inputStr = "";
+
+    $("body").on("keypress", (e) => {
+        console.log(e.originalEvent);
+        console.log(e.originalEvent.keyCode);
+
+        inputStr += e.originalEvent.keyCode;
+
+        console.log(inputStr);
+
+        if(inputStr === secretPw){
+            alert("AWOOOOO FENRIR");
+        }
+
+        if(inputStr.length > 25){
+            inputStr = "";
+        }
+    })
+});
+
+</script>
+</body>
+</html>
