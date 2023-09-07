@@ -31,34 +31,100 @@ Top three days:
 
 <p style="color: red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Accusantium aliquam</span> amet autem deleniti dolorem exercitationem, <span>facilis impedit ipsa iste iusto minima nobis placeat recusandae reprehenderit similique sint sit, soluta suscipit.</span></p>
 
+<button id="highlight-btn">Click here to add ugly green to the list items</button>
+
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <script>
 // .html() — Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
 
+console.log($("p").html());
+
+$("ol").html(`
+<li class="highlight">Halloween</li>
+<li class="highlight">Christmas Day</li>
+<li class="highlight">Boxing Day</li>
+`);
+
 //.text() - Get the inner text contents of the first element in the set of matched elements or set the HTML contents of every matched element.
 //
+
+console.log($("p").text());
+
+$("ol").text(`
+<li>Dia de Los muertos</li>
+<li>Dia de Los muertos</li>
+<li>Dia de Los muertos</li>
+`);
+
 // .css() — Get the value of a style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
+
+console.log($("p").css("color"));
+console.log($("p").css("border"));
+console.log($("p").css("width"));
+
+//Two arguments - prop + setting ("color", "red")
+
+$("li")
+    .css("color", "rebeccapurple")
+    .css("border", "1px solid red")
+    .css("padding", ".2em")
+    .css("margo", ".2em")
+
+let styleObject = {
+    'color':'lightblue',
+    'background-color':'gray',
+    'padding':'1em'
+}
+
+$("h1").css(styleObject)
+
 //
 // .addClass() — Adds the specified class(es) to each of the set of matched elements.
+
+$("ul").addClass("highlight");
 //
 // .removeClass() — Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+
+$("ul").removeClass("highlight");
 //
 // .toggleClass() — Add or remove one or more classes from each element in the set of matched elements, depending on either the class’ presence or the value of the switch argument.
 
+$("#highlight-btn").on("click", (e) => {
+    $("li").toggleClass("highlight");
+})
 
 //pt2:
 
 // .each() — Iterate over a jQuery object, executing a function for each matched element.
 
+$("li").each(function(index){
+    if(index % 2 !== 0){
+        $(this).html(`
+        haha - hacked u
+        `)
+    }
+})
+
 //     .first() — Reduce the set of matched elements to the first in the set.
+
+$("li").first().css("font-size", "60px")
 
 //     .last() — Reduce the set of matched elements to the final one in the set.
 
+$("li").last().css("background-color", "cornflowerblue");
+
+
+
 //     .parent() — Get the parent of each element in the current set of matched elements, optionally filtered by a selector.
+$("li").parent().css("background-color", "yellow");
 
 //     .children() — Get the children of each element in the set of matched elements, optionally filtered by a selector.
+
+console.log($("body").children().on("click", function(e){
+    console.log(e);
+}));
 
 //     .next() — Get the immediately following sibling in the set of matched elements.
 
