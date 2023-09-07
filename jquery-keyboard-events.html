@@ -12,7 +12,7 @@
 <div id="currentTypingStr"></div>
 
 
-<button id="refresh">Reset Variable (click here)</button>
+<button id="refresh">Reset Page (click here)</button>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
@@ -24,16 +24,21 @@
         let secretPwCharacters = "makeitred";
         let inputStrCharacters = "";
 
+        let goodMorning = "103111111100109111114110105110103";
 
-    $("body").on("keypress", (e) => {
+
+
+    $("body").on("keypress", (event) => {
+
+        console.log(event);
         console.log("event object property 'originalEvent':");
-        console.log(e.originalEvent);
-        console.log("keycode: " + e.originalEvent.keyCode);
-        console.log("key: " + e.originalEvent.key);
+        console.log(event.originalEvent);
+        console.log("keycode: " + event.originalEvent.keyCode);
+        console.log("key: " + event.originalEvent.key);
 
-        inputStrKeyCode += e.originalEvent.keyCode;
+        inputStrKeyCode += event.originalEvent.keyCode;
 
-        inputStrCharacters += e.originalEvent.key;
+        inputStrCharacters += event.originalEvent.key;
 
         if(inputStrKeyCode === secretPwKeyCode){
             alert("AWOOOOO FENRIR YOU GOT THE KEYS TO ME CODE");
@@ -45,6 +50,10 @@
             $("body").css("background-color", "red");
             inputStrKeyCode = "";
             inputStrCharacters = "";
+        }
+
+        if(inputStrKeyCode === goodMorning){
+            alert("good morning fenrir!");
         }
 
         $("#currentTypingStr").text(inputStrCharacters);
