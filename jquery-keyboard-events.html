@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>keyboard events</title>
+    <style>
+        #icon-card-container{
+            height: 2em;
+            width: 8em;
+            flex-wrap: wrap;
+            margin-bottom: 4em;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .icon-card {
+            margin: .5em;
+            padding: .5em;
+            border: 2px solid black;
+            width: 1em;
+            height: 1em;
+            text-align: center;
+        }
+
+        #refresh {
+          margin-top: 1em;
+
+        }
+    </style>
 </head>
 <body>
 
@@ -10,6 +36,8 @@
 <div id="currentTypingCode"></div>
 <br>
 <div id="currentTypingStr"></div>
+<br>
+<div id="icon-card-container" class="flex w-20"></div>
 
 
 <button id="refresh">Reset Page (click here)</button>
@@ -17,7 +45,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <script>
-    $(function() {
+    // $(function() {
         let secretPwKeyCode = "7210112170101110114105114";
         let inputStrKeyCode = "";
 
@@ -25,6 +53,10 @@
         let inputStrCharacters = "";
 
         let goodMorning = "103111111100109111114110105110103";
+
+
+        let renderArray = [];
+        let htmlRender = "";
 
 
 
@@ -39,6 +71,30 @@
         inputStrKeyCode += event.originalEvent.keyCode;
 
         inputStrCharacters += event.originalEvent.key;
+
+        if(renderArray.length === 4) {
+            renderArray.shift();
+        }
+
+        renderArray.push(event.originalEvent.key);
+
+        htmlRender = "";
+        for (let i = 0; i < renderArray.length; i++) {
+            if(renderArray[i].toLowerCase() === "enter"){
+                htmlRender += `
+            <div class="icon-card flex">&#9166</div>
+            `
+            } else {
+
+            htmlRender += `
+            <div class="icon-card flex">${renderArray[i].toUpperCase()}</div>
+            `
+            }
+        }
+
+        $("#icon-card-container").html(htmlRender);
+        console.log(renderArray);
+
 
         if(inputStrKeyCode === secretPwKeyCode){
             alert("AWOOOOO FENRIR YOU GOT THE KEYS TO ME CODE");
@@ -64,7 +120,7 @@
             location.reload();
 
         })
-});
+// });
 
 </script>
 </body>
