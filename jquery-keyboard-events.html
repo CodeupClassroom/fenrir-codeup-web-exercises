@@ -11,6 +11,9 @@
 <br>
 <div id="currentTypingStr"></div>
 
+
+<button id="refresh">Reset Variable (click here)</button>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <script>
@@ -23,9 +26,10 @@
 
 
     $("body").on("keypress", (e) => {
+        console.log("event object property 'originalEvent':");
         console.log(e.originalEvent);
-        console.log(e.originalEvent.keyCode);
-        console.log(e.originalEvent.key);
+        console.log("keycode: " + e.originalEvent.keyCode);
+        console.log("key: " + e.originalEvent.key);
 
         inputStrKeyCode += e.originalEvent.keyCode;
 
@@ -46,6 +50,11 @@
         $("#currentTypingStr").text(inputStrCharacters);
         $("#currentTypingCode").text(inputStrKeyCode);
     })
+
+        $("#refresh").on("click", () => {
+            location.reload();
+
+        })
 });
 
 </script>
