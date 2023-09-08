@@ -43,16 +43,47 @@
 
   // Creating a jQuery request object
 
-    // $.ajax('./data/orders.json'); // jQuery request object
+  // console.log($.ajax('https://swapi.dev/api/people/1').responseJSON);
+
+  // let data;
+
+  // $.ajax('https://swapi.dev/api/plants/1').done((starWarsData) => {
+  //   data = starWarsData;
+  // }).fail(() => {
+  //   $.ajax('otherstarwarsapi.dev')
+  // });
+
+
+  // $.ajax('https://swapi.dev/api/people/2').done((data) => {
+  //   console.log(data);
+  //   console.log(data.films[0]);
+  //   console.log(data.name);
+  // });
+
+  // setTimeout(() => {
+  //   console.log(data);
+  // }, 5000);
+
+
+
+  // $.get('https://swapi.dev/api/people/2').done((data) => {
+  //   console.log(data.name);
+  // });
+
+
+
+
+  // $.ajax('./data/orders.json'); // jQuery request object
     // console.log($.ajax('./data/orders.json'));
 
 
   // The `done` method is used to wait until the data is asynchronously received,
   // then it will call the function passed to it.
 
-    // $.ajax("./data/orders.json").done(function(data) { // the done method
+    // $.ajax("./data/orders.json").done((data) => { // the done method
     //     console.log(data);
     // });
+
 
     // $.ajax('https://www.reddit.com/r/webdev/.json').done(function(data) {
     //     console.log(data);
@@ -111,11 +142,12 @@
 
   // passing params as key value pairs in a second object argument...
 
-    // $.get('https://swapi.dev/api/planets/1', {
-    //     format: 'wookiee'
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
+    $.get('https://swapi.dev/api/planets/1', {
+        format: 'wookiee',
+        units: 'metric'
+    }).done(function(data) {
+        console.log(data);
+    });
 
   // Query params can set all kinds of things, depending on the API,
   // like results per page, sorting order, units of measurement, timezone, etc.
