@@ -56,12 +56,37 @@ $.get(BASE_CURRENT_WEATHER_URL + `q=Anaheim,CA,USA&appid=${WEATHER_MAP_KEY}&unit
     $("#insert-weather").html(html);
 })
 
+//"5 Day Weather"
+const BASE_FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?&units=imperial&appid=${WEATHER_MAP_KEY}`
+
+console.log(BASE_FORECAST_URL + `&q=Honolulu,HI,USA`);
+
+// Loops < omg y tho
+// Let's loop and get five days of forecasts as practice
+
+$.get(BASE_FORECAST_URL + `&q=Honolulu,HI,USA`)
+    .done((data) => {
+
+
+        for (let i = 0; i < data.list.length; i += 8) {
+            console.log(`Test of grabbing date time text from array: ${data.list[i].dt_txt}`);
+
+        }
+    })
+
+//"One Call" (asks for a credit card - but we can limit it to 1k calls a day in our dashboard / use a gift card)
+
+const BASE_ONECALL_URL = `https://api.openweathermap.org/data/3.0/onecall?appid=${WEATHER_MAP_KEY}&units=imperial`
+
+console.log(BASE_ONECALL_URL + `&lat=${29.51}&lon=${-98.65}`)
+
+
+
 //Here's a thing called fetch: ** Wow **; modern way to do AJAX!
 
-// fetch(BASE_CURRENT_WEATHER_URL + `lat=${29.51}&lon=${-98.65}&appid=${WEATHER_KEY}`)
-//     .then((response) => response.json())
-//     .then((response) => console.log(response))
+fetch(BASE_CURRENT_WEATHER_URL + `lat=${29.51}&lon=${-98.65}&appid=${WEATHER_MAP_KEY}`)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
 
-//"5 Day Weather"
-//"One Call" (asks for a credit card - but we can limit it to 1k calls a day in our dashboard / use a gift card)
+
 
