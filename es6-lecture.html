@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e s 6</title>
+</head>
+<body>
+<h1> e c m a s c r i p t </h1>
+</body>
+
+
+<script>
+// Things we've seen prior . . .
+// Exponentiation Operator
+console.log(Math.pow(2, 3));
+console.log(2 ** 3);
+
+// Let & const vs var
+// Remember: Scoping differences (block scope) and the temporal dead zone: https://www.freecodecamp.org/news/what-is-the-temporal-dead-zone/
+
+let weatherOutside = "sunny";
+console.log(`Template strings let us do string interpolation like this: What's 2 + 2? 2 + 2 is ${2 + 2}`);
+
+console.log(`It is ${weatherOutside === "sunny"} that is it ${weatherOutside} outside`);
+
+let foodOrder = ["spicy chicken", "chicken nuggets", "salad with ranch", "pimento cheese sandwich"];
+
+for (let ele of foodOrder){
+    console.log(`Here's a food: ${ele}`);
+
+    if(ele.includes("chicken")){
+
+        console.log("🐔");
+    }
+}
+
+let foodOrderObjs = [
+    {ordered: "chicken nuggets", customerName: "Kenny H."},
+    {ordered: "chicken sandwich", customerName: "Lola C."},
+    {ordered: "omlette de fromage", customerName: "Gilly G."}
+]
+
+for (let foodOrderObj of foodOrderObjs){
+    console.log(`Here's a customer we had today: ${foodOrderObj.customerName}`);
+}
+
+function sayHi(name = "A student"){
+    console.log(`${name} is here!`);
+}
+
+let sayHiArrow = (name = "A different student") => console.log(`${name} is here with an arrow!`)
+
+// Object property variable assignment
+let color = "red";
+let make = "Chevy";
+let model = "Silverado";
+
+let truck = {
+    color,
+    make,
+    model,
+    year: 2015
+}
+
+let truck2 = {
+    color, make, model, year: 2018
+}
+
+let truck3 = {
+    color,
+    make,
+    model,
+    year: 2021
+}
+
+let truck4 = {
+    color: "red",
+    make: "Chevrolet",
+    model: "Silverado",
+    year: 2023
+}
+
+
+//Object destructuring
+
+let car = {
+    jessicasMake: "Chevy",
+    jessicasModel: "Cruze",
+    jessicasCarColor: "Red",
+    jessicasCarYear: 2002
+}
+
+let { jessicasMake, jessicasModel, jessicasCarColor, jessicasCarYear } = car;
+
+console.log(jessicasMake);
+console.log(jessicasModel);
+console.log(jessicasCarColor);
+console.log(jessicasCarYear);
+
+let enchiladas = ["verde", "cricket", "blanca"];
+
+let [, , whiteEnchiladas] = enchiladas;
+
+
+</script>
+</html>
