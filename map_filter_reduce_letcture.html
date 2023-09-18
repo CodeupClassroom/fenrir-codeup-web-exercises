@@ -10,64 +10,175 @@
 
 <script>
     let ourPets = [
-    {
-        species: "Cat",
-        name: "Sassy",
-        primaryColor: "gray",
-        age: 5,
-        knowsTricks: false
-    },
-    {
-        species: "Dog",
-        name: "Lindsey",
-        primaryColor: "yellow",
-        age: 5,
-        knowsTricks: true
-    },
-    {
-        species: "Dog",
-        name: "Luna",
-        primaryColor: "gray",
-        age: 1,
-        knowsTricks: true
-    },
-    {
-        species: "Cat",
-        name: "Cali",
-        primaryColor: "gray,brown,white",
-        age: 5,
-        knowsTricks: false
-    },
-    {
-        species: "Bird",
-        name: "Tobi",
-        primaryColor: "green,black",
-        age: 1.5,
-        knowsTricks: true
-    },
-    {
-        species: "Cat",
-        name: "Pinch 'o Pepper",
-        primaryColor: "Black",
-        age: 2,
-        knowsTricks: true
+        {
+            species: "Cat",
+            name: "Sassy",
+            primaryColor: "gray",
+            age: 5,
+            knowsTricks: false
+        },
+        {
+            species: "Dog",
+            name: "Lindsey",
+            primaryColor: "yellow",
+            age: 5,
+            knowsTricks: true
+        },
+        {
+            species: "Dog",
+            name: "Luna",
+            primaryColor: "gray",
+            age: 1,
+            knowsTricks: true
+        },
+        {
+            species: "Cat",
+            name: "Cali",
+            primaryColor: "gray,brown,white",
+            age: 5,
+            knowsTricks: false
+        },
+        {
+            species: "Bird",
+            name: "Tobi",
+            primaryColor: "green,black",
+            age: 1.5,
+            knowsTricks: true
+        },
+        {
+            species: "Cat",
+            name: "Pinch 'o Pepper",
+            primaryColor: "Black",
+            age: 2,
+            knowsTricks: true
+        }
+    ]
+
+    //        .filter()
+    // Let's get cats only!
+    let catsOnlyArray = ourPets.filter((pet) =>{
+        return pet.species === "Cat";
+    })
+
+    console.log(catsOnlyArray);
+
+    let alligatorOnlyArray = ourPets.filter((pet) =>{
+        return pet.species === "Alligator";
+    })
+
+    console.log(alligatorOnlyArray);
+    //How can we get ages less than five?
+    let petsUnderFive = ourPets.filter((pet) => {
+        return pet.age < 5;
+    })
+
+    console.log(petsUnderFive);
+
+    //    .map()
+    //Let's get an array of the cat ages with the human years math done! Some sources say multiplying by seven will get us the human age
+
+    let catsHumanAge = catsOnlyArray.map((cat) => {
+        return `${cat.name} is ${(cat.age * 7)} years old`;
+    })
+
+    console.log(catsHumanAge);
+
+    //        .reduce()
+    // Can we use .reduce() to quickly sum up our pet's ages?
+
+    let totalPetAge = ourPets.reduce((total, pet) => {
+        return total + pet.age;
+    }, 0)
+
+    console.log(`Our pet's combined age is ${totalPetAge}`);
+
+    let arrayNums = [12, 16, 7, 2, 22];
+
+    console.log(arrayNums);
+    let favoriteNumberTotal = arrayNums.reduce((accumulator, currentValue, index) => {
+        const returns = accumulator + currentValue;
+        console.log(
+            `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
+        );
+        return returns;
+    }, 24);
+
+    console.log(favoriteNumberTotal);
+
+    let mappedAges = ourPets.map((pet) => pet.age);
+
+    let combinedAges = mappedAges.reduce((accumulator, age) => accumulator += age);
+
+    console.log(`William's solution should work: Here's our combined pet ages by using map and reduce: ${combinedAges}`);
+
+
+    let aStringOfNames = ourPets.reduce((accumulator, pet) => {
+        return accumulator + pet.name + ", ";
+    }, "sorry reduce is weird :(");
+
+    console.log(aStringOfNames);
+    // Bonus:
+    // .some()
+
+    console.log(`Do any of us own an alligator?`);
+
+    let ownsAlligator = ourPets.some((pet) => pet.species.toLowerCase() === "alligator");
+    console.log(`It is ${ownsAlligator} that one of us owns an alligator`);
+
+    console.log(`Do any of us own a cat?`);
+
+    let ownsCat = ourPets.some((pet) => pet.species.toLowerCase() === "cat");
+    console.log(`It is ${ownsCat} that one of us owns a cat`);
+
+    console.log(`Do any of us own a pet named 'Gilly'?`);
+
+    let ownsGilly = ourPets.some((pet) => pet.name.toLowerCase() === "gilly");
+
+    console.log(`It is ${ownsGilly} that one of us owns a pet named Gilly`);
+
+    console.log(`Do any of us own a pet named 'Sassy'`);
+
+    let ownsSassy = ourPets.some((pet) => pet.name.toLowerCase() === "sassy");
+
+    console.log(`It is ${ownsSassy} that one of us owns a pet named Sassy`);
+
+
+    //.find()
+    //Let's find a pet - where's my cat, Pinch?!
+
+    let pinchTheCat = ourPets.find((pet) => pet.name === "Pinch 'o Pepper");
+
+    console.log(`Did we find Pinch?`);
+    console.log( ` %c／l、
+（ﾟ､ ｡７ <<(mrow)
+ l、ﾞ~ヽ
+ じしf_,)ノ `, "color:#404040");
+
+    console.log(pinchTheCat);
+
+    let firstCatInArray = ourPets.find((pet) => pet.species.toLowerCase() === "cat");
+
+    console.log(firstCatInArray);
+
+//     Mary has a little lamb
+
+    function countWords(sentence) {
+        const words = sentence.split(' '); // transform a sentence into an array of words
+        const wordCountObject = words.reduce((wordCounts, word) => {
+            if (typeof wordCounts[word] === 'undefined') {
+                // if the word is not yet present in our object, set it's value to 1
+                wordCounts[word] = 1;
+            } else {
+                // otherwise increment the existing count
+                wordCounts[word] += 1;
+            }
+            return wordCounts;
+        }, {}); // start with an empty object
+        return wordCountObject;
     }
-]
 
-
-
-//    .map()
-
-
-//        .filter()
-//        .reduce()
-
-
-// Bonus:
-// .some()
-//.find()
-
-
+    countWords('Mary had a little lamb little lamb little lamb');
+    // {Mary: 1, had: 1, a: 1, little: 3, lamb: 3}
 
 </script>
 
