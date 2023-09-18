@@ -5,6 +5,8 @@
     <title>Mapbox</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+
     <style>
         #map {
             width: 100%;
@@ -16,9 +18,10 @@
 
 
 <div id='map'></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
 <script src="js/keys.js"></script>
 <script>
-    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
@@ -32,6 +35,20 @@
     let marker2 = new mapboxgl.Marker().setLngLat([-98.643, 29.555]).addTo(map);
     let popup2 = new mapboxgl.Popup().setHTML("<p>HEB!</p>");
     marker2.setPopup(popup2);
+
+    const geocoder = new MapboxGeocoder({
+        // Initialize the geocoder
+        accessToken: mapboxgl.accessToken, // Set the access token
+        mapboxgl: mapboxgl, // Set the mapbox-gl instance
+        marker: false // Do not use the default marker style
+    });
+
+    // Add the geocoder to the map
+    map.addControl(geocoder);
+
+    geocoder.on('result', (event) => {
+        console.log(event);
+    });
 </script>
 
 </body>
